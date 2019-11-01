@@ -27,6 +27,11 @@ body {
   height: auto;
 }
 
+.std-wrapper {
+  width: auto;
+  height: auto;
+}
+
 .btn-std {
   width: auto;
   height: auto;
@@ -82,5 +87,18 @@ form input[type='text'] {
   display: inline-block;
 
 }
+
+/*SUGGESTION BOX*/
+.suggest-box-wrapper {
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+
+
 
 
