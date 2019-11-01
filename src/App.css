@@ -12,10 +12,46 @@ body {
   background-color: #eee;
 }
 
+.bg-blue {
+  background-color: #3366cc;
+}
+
 .vt-ctr {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.sec-block {
+  width: 100%;
+  height: auto;
+}
+
+.btn-std {
+  width: auto;
+  height: auto;
+  padding: 10px 40px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.btn-std:hover {
+  transition: 0.2s;
+  background: #3366cc;
+  color: #000;
+}
+
+.inp-std {
+  width: 50%;
+  height: auto;
+  padding: 10px 40px;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
 }
 
 /* GENERAL */
@@ -26,4 +62,25 @@ nav {
 nav ul li {
   display: inline-block;
   padding: 0px 20px;
+  color: #eee;
+  cursor: pointer;
 }
+
+/*SEARCH FRUITS COMPONENT*/
+section.search-fruits {
+  height: 100vh;
+  background-color: #ebf0fa;
+ 
+}
+
+form label {
+  font-style: italic;
+  display: block;
+}
+
+form input[type='text'] {
+  display: inline-block;
+
+}
+
+
