@@ -11,7 +11,9 @@ class SuggestionBox extends React.Component {
 	render() {
 	    return (
 			<div className='suggest-box-wrapper'>
-
+				<ul>
+					
+				</ul>
 			</div>
 	    )
 	}
@@ -21,11 +23,8 @@ class SuggestionBox extends React.Component {
 	}
 
 	componentDidUpdate() {	
-		console.log(this.props);
-		// var that = this;
-		// setTimeout(function() {
-		// 	console.log(that.state.suggested_items);
-		// }, 200);
+		console.log('*' + this.props.suggestions);
+		this.state.suggested_items.push(<li>{this.props.suggestions}</li>);
 	}
 }
 

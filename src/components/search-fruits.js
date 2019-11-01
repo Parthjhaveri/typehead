@@ -87,7 +87,6 @@ class SearchFruits extends React.Component {
 				const suggested_fruit = el.toLowerCase();
 
 				if (suggested_fruit.includes(that.state.input_val)) {
-					console.log('*' + suggested_fruit);
 					that.setState({suggested: suggested_fruit});
 				} 
 
