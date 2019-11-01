@@ -5,7 +5,7 @@ class SuggestionBox extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+			suggested_items: []
 		}
 	}
 	render() {
@@ -14,6 +14,18 @@ class SuggestionBox extends React.Component {
 
 			</div>
 	    )
+	}
+
+	componentWillReceiveProps() {		
+		// console.log(this.props);
+	}
+
+	componentDidUpdate() {	
+		console.log(this.props);
+		// var that = this;
+		// setTimeout(function() {
+		// 	console.log(that.state.suggested_items);
+		// }, 200);
 	}
 }
 

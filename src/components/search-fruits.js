@@ -11,7 +11,7 @@ class SearchFruits extends React.Component {
 		this.state = {
 			'input_val': null,
 			'fruits': [
-				'Açaí', 'Apple', 'Akee', 'Apricot', 'Avocado', 'Banana', 'Bilberry', 'Blackberry',
+				'Acai', 'Apple', 'Akee', 'Apricot', 'Avocado', 'Banana', 'Bilberry', 'Blackberry',
 				'Blackcurrant', 'Black sapote', 'Blueberry', 'Boysenberry', 'Buddhas hand', 
 				'Crab apples', 'Currant', 'Cherry', 'Cherimoya', 'Chico fruit', 'Cloudberry', 'Coconut',
 				'Cranberry', 'Cucumber', 'Damson', 'Dates', 'Dragonfruit', 'Pitaya', 'Durian',
@@ -28,7 +28,8 @@ class SearchFruits extends React.Component {
 				'Strawberry', 'Surinam cherry', 'Tamarillo', 'Tamarind', 'Ugli fruit', 'White currant',
 				'White sapote', 'Yuzu', 'Avocado', 'Bell pepper', 'Chili pepper', 'Corn kernel',
 				'Cucumber', 'Eggplant', 'Olive', 'Pea', 'Pumpkin', 'Squash', 'Tomato', 'Zucchini'
-			]
+			],
+			'suggested': ''
 		}
 
 		this.handle_input = this.handle_input.bind(this);
@@ -62,7 +63,7 @@ class SearchFruits extends React.Component {
 								id='find-fruit'
 							/>
 						</form>
-						<SuggestionBox />
+						<SuggestionBox suggestions={this.state.suggested} />
 					</div>
 				</Container>
 			</section>			  
@@ -83,11 +84,13 @@ class SearchFruits extends React.Component {
 			let fruits_arr = that.state.fruits;
 			fruits_arr.forEach((el, idx) => {	
 
-				const lower_cased = el.toLowerCase();
+				const suggested_fruit = el.toLowerCase();
 
-				if (lower_cased.includes(that.state.input_val)) {
-					console.log(lower_cased);
-				}
+				if (suggested_fruit.includes(that.state.input_val)) {
+					console.log('*' + suggested_fruit);
+					that.setState({suggested: suggested_fruit});
+				} 
+
 			})
 
 		}, 200);
