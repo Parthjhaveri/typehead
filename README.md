@@ -1,3 +1,3 @@
 # Typehead Widget
----
-## Please run `npm start`
+
+### Please run `npm start`
