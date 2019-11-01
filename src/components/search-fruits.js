@@ -7,8 +7,9 @@ import SuggestionBox from './suggestion-box';
 class SearchFruits extends React.Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
-			'input_val': '',
+			'input_val': null,
 			'fruits': [
 				'Açaí', 'Apple', 'Akee', 'Apricot', 'Avocado', 'Banana', 'Bilberry', 'Blackberry',
 				'Blackcurrant', 'Black sapote', 'Blueberry', 'Boysenberry', 'Buddhas hand', 
@@ -52,6 +53,7 @@ class SearchFruits extends React.Component {
 								className='inp-std'
 								id='search-fruit'
 								onChange={this.handle_input}
+								defaultValue={this.state.input_val}
 							/>
 							<input 
 								type='submit'							
@@ -73,7 +75,22 @@ class SearchFruits extends React.Component {
 
 	handle_input(event) {
 		this.setState({input_val: event.target.value});
-		console.log(this.state.input_val);
+		
+		const that = this; // SLIGHT DELAY FOR STATE UPDATE
+		setTimeout(() => {
+			console.log(that.state.input_val);
+
+			let fruits_arr = that.state.fruits;
+			fruits_arr.forEach((el, idx) => {	
+
+				const lower_cased = el.toLowerCase();
+
+				if (lower_cased.includes(that.state.input_val)) {
+					console.log(lower_cased);
+				}
+			})
+
+		}, 200);
 	}
 }
 
