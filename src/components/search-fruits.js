@@ -29,15 +29,19 @@ class SearchFruits extends React.Component {
 				'White sapote', 'Yuzu', 'Avocado', 'Bell pepper', 'Chili pepper', 'Corn kernel',
 				'Cucumber', 'Eggplant', 'Olive', 'Pea', 'Pumpkin', 'Squash', 'Tomato', 'Zucchini'
 			],
-			'suggested': ''
-		}
-
+			'suggested': '',
+		}		
 		this.handle_input = this.handle_input.bind(this);
 	}
+
+	componentDidMount() {
+		console.log(this.state.fruits);	
+	}
+
 	render() {
 	    return (
 			<section className='p-3 sec-block search-fruits'>
-				<Container>
+				<Container>					
 					<h1>Search your Fruit</h1>
 					<hr/>
 					<div className='std-wrapper'>
@@ -47,7 +51,7 @@ class SearchFruits extends React.Component {
 							</label>
 							<input 
 								type='text'
-								autoCorrect='on'
+								autoComplete='off'
 								autoFocus='on'
 								aria-required='true'
 								name='search-fruit'
@@ -70,16 +74,12 @@ class SearchFruits extends React.Component {
 	    )
 	}
 
-	componentDidMount() {
-		console.log(this.state.fruits);
-	}
-
 	handle_input(event) {
 		this.setState({input_val: event.target.value});
 		
 		const that = this; // SLIGHT DELAY FOR STATE UPDATE
 		setTimeout(() => {
-			console.log(that.state.input_val);
+			console.log('---', that.state.input_val);
 
 			let fruits_arr = that.state.fruits;
 			fruits_arr.forEach((el, idx) => {	
